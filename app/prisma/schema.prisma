@@ -1,0 +1,132 @@
+// schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum OrderStatus {
+  PENDING
+  PAID
+  SHIPPED
+  DELIVERED
+  CANCELLED
+  RETURNED
+}
+
+enum PaymentStatus {
+  UNPAID
+  PAID
+  REFUNDED
+}
+
+enum ShippingStatus {
+  PENDING
+  SHIPPED
+  DELIVERED
+}
+
+model Order {
+  id             String           @id @default(uuid())
+  userId         String
+  status         OrderStatus      @default(PENDING)
+  totalAmount    Float
+  paymentStatus  PaymentStatus    @default(UNPAID)
+  shippingStatus ShippingStatus   @default(PENDING)
+  createdAt      DateTime         @default(now())
+  updatedAt      DateTime         @updatedAt
+
+  items          OrderItem[]
+  shipping       ShippingAddress?
+  cancellation   Cancellation?
+  return         Return?
+  discount       Discount?
+  tax            Tax?
+  paymentInfo    PaymentInfo?
+  auditLogs      AuditLog[]
+}
+
+model OrderItem {
+  id        String @id @default(uuid())
+  orderId   String
+  productId String
+  quantity  Int
+  price     Float
+
+  order     Order  @relation(fields: [orderId], references: [id])
+}
+
+model ShippingAddress {
+  id         String @id @default(uuid())
+  orderId    String @unique
+  fullName   String
+  address1   String
+  address2   String?
+  city       String
+  state      String
+  postalCode String
+  country    String
+  phone      String
+
+  order      Order  @relation(fields: [orderId], references: [id])
+}
+
+model Cancellation {
+  id         String   @id @default(uuid())
+  orderId    String   @unique
+  reason     String
+  canceledAt DateTime @default(now())
+
+  order      Order    @relation(fields: [orderId], references: [id])
+}
+
+model Return {
+  id        String   @id @default(uuid())
+  orderId   String   @unique
+  reason    String
+  returnAt  DateTime @default(now())
+
+  order     Order    @relation(fields: [orderId], references: [id])
+}
+
+model Discount {
+  id      String @id @default(uuid())
+  code    String @unique
+  amount  Float
+  orderId String @unique
+
+  order   Order  @relation(fields: [orderId], references: [id])
+}
+
+model Tax {
+  id        String @id @default(uuid())
+  orderId   String @unique
+  taxRate   Float
+  taxAmount Float
+
+  order     Order  @relation(fields: [orderId], references: [id])
+}
+
+model PaymentInfo {
+  id            String   @id @default(uuid())
+  orderId       String   @unique
+  provider      String
+  transactionId String
+  paidAt        DateTime
+
+  order         Order    @relation(fields: [orderId], references: [id])
+}
+
+model AuditLog {
+  id        String   @id @default(uuid())
+  orderId   String
+  action    String
+  actorId   String
+  createdAt DateTime @default(now())
+
+  order     Order    @relation(fields: [orderId], references: [id])
+}
