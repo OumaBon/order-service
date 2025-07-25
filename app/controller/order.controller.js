@@ -3,6 +3,7 @@ import logger from "../config/logger.js";
 import AppError from "../utils/app.error.js";
 
 
+
 const orderService = new OrderService();
 
 
@@ -11,7 +12,7 @@ export default class OrderController {
     // POST/orders
     async create(req, res, next){
         try{
-            const order = await orderService.cancelOrder(req.body);
+            const order = await orderService.createOrder(req.body);
             return res.status(201).json(order);
         }catch(error){
             logger.error(`OrderController - create: ${error.message}`);
@@ -42,9 +43,15 @@ export default class OrderController {
 
     // POST/orders/:id/cancel
     async cancelOrder (req, res, next){
+
         try{
-            const {reason, actorId} = req.body;
-            const order = await orderService.cancelOrder(req.params.id, reason, actorId);
+            const {id} = req.params;
+            const {actorId, reason} = req.body
+
+            if(!reason || !actorId){
+                throw new AppError('Reason and actorId are required to cancel order', 400);
+            }
+            const order = await orderService.cancelOrder(id, reason, actorId);
             return res.status(200).json(order);
         }catch(error){
             logger.error(`OrderController - cancel: ${error.message}`);
@@ -55,8 +62,14 @@ export default class OrderController {
     // POST/orders/:id/return
     async returnOrder(req, res, next){
         try{
-            const {reason, actorId} = req.body;
-            const order =await orderService.returnOrder(req.params.id, reason, actorId);
+            const {id} = req.params
+            const {actorId, reason} = req.body
+
+            if(!reason || !actorId){
+                throw new AppError('Reason and actorId are required to return order', 400);
+            }
+
+            const order =await orderService.returnOrder(id, reason, actorId);
             return res.status(200).json(order);
         }catch(error){
             logger.error(`OrderController - return: ${error.message}`);
@@ -68,7 +81,7 @@ export default class OrderController {
     async updatePayment(req, res, next){
         try{
             const {paymentStatus, actorId} = req.body;
-            const order = orderService.updatePaymentStatus(req.params.id, paymentStatus, actorId);
+            const order = await orderService.updatePaymentStatus(req.params.id, paymentStatus, actorId);
             return res.status(200).json(order)
         }catch(err){
             logger.error(`OrderController - updatePayment: ${err.message}`);
