@@ -1,0 +1,413 @@
+[2025-07-25T08:19:40.634Z] INFO:Server up on port: 8000
+[2025-07-25T08:21:56.496Z] INFO:Server up on port: 8000
+[2025-07-25T08:22:00.294Z] ERROR:[404 Not Found - /favicon.ico - GET /favicon.ico - ::1]
+[2025-07-25T08:22:18.916Z] ERROR:[400 This route failed on purpose - GET /fail - ::1]
+[2025-07-25T09:15:25.537Z] INFO:Server up on port: 8000
+[2025-07-25T09:50:44.841Z] INFO:Server up on port: 8000
+[2025-07-25T12:50:19.644Z] INFO:Server up on port: 8000
+[2025-07-25T12:50:51.417Z] INFO:Server up on port: 8000
+[2025-07-25T12:50:52.472Z] INFO:Server up on port: 8000
+[2025-07-25T12:51:07.016Z] INFO:Server up on port: 8000
+[2025-07-25T12:55:09.418Z] INFO:Cancelling order [object Object] by undefined
+[2025-07-25T12:55:09.654Z] ERROR:Failed to cancel order [object Object]: 
+Invalid `prisma.order.update()` invocation:
+
+{
+  where: {
+    id: {
+      userId: "a1b2c3d4-e5f6-7890-abcd-1234567890ef",
+      totalAmount: 150,
+      items: [
+        {
+          productId: "11112222-3333-4444-5555-666677778888",
+          quantity: 2
+        },
+        {
+          productId: "99990000-aaaa-bbbb-cccc-ddddeeeeffff",
+          quantity: 1
+        }
+      ],
+      shipping: {
+        address: "123 Main Street, Nairobi, Kenya",
+        method: "Standard",
+        cost: 10
+      },
+      discount: {
+        code: "SUMMER10",
+        amount: 10
+      },
+      tax: {
+        rate: 0.15,
+        amount: 15
+      },
+      paymentInfo: {
+        method: "Credit Card",
+        transactionId: "txn_123456789"
+      }
+    }
+  },
+  data: {
+    status: "CANCELLED",
+    cancellation: {
+      create: {
++       reason: String
+      }
+    },
+    auditLogs: {
+      create: {
+        action: "ORDER_CANCELLED",
+        actorId: undefined
+      }
+    }
+  },
+  include: {
+    cancelation: true,
+    auditLogs: true
+  }
+}
+
+Argument `reason` is missing.
+[2025-07-25T12:55:09.656Z] ERROR:OrderController - create: Could not cancel order
+[2025-07-25T12:55:09.658Z] ERROR:[500 Could not cancel order - POST /order - ::ffff:127.0.0.1]
+[2025-07-25T12:56:50.529Z] INFO:Server up on port: 8000
+[2025-07-25T12:57:02.034Z] INFO:Cancelling order [object Object] by undefined
+[2025-07-25T12:57:02.237Z] ERROR:Failed to cancel order [object Object]: 
+Invalid `prisma.order.update()` invocation:
+
+{
+  where: {
+    id: {
+      userId: "a1b2c3d4-e5f6-7890-abcd-1234567890ef",
+      totalAmount: 150,
+      items: [
+        {
+          productId: "11112222-3333-4444-5555-666677778888",
+          quantity: 2
+        },
+        {
+          productId: "99990000-aaaa-bbbb-cccc-ddddeeeeffff",
+          quantity: 1
+        }
+      ],
+      shipping: {
+        address: "123 Main Street, Nairobi, Kenya",
+        method: "Standard",
+        cost: 10
+      },
+      discount: {
+        code: "SUMMER10",
+        amount: 10
+      },
+      tax: {
+        rate: 0.15,
+        amount: 15
+      },
+      paymentInfo: {
+        method: "Credit Card",
+        transactionId: "txn_123456789"
+      }
+    }
+  },
+  data: {
+    status: "CANCELLED",
+    cancellation: {
+      create: {
++       reason: String
+      }
+    },
+    auditLogs: {
+      create: {
+        action: "ORDER_CANCELLED",
+        actorId: undefined
+      }
+    }
+  },
+  include: {
+    cancelation: true,
+    auditLogs: true
+  }
+}
+
+Argument `reason` is missing.
+[2025-07-25T12:57:02.238Z] ERROR:OrderController - create: Could not cancel order
+[2025-07-25T12:57:02.240Z] ERROR:[500 Could not cancel order - POST /order - ::ffff:127.0.0.1]
+[2025-07-25T13:05:58.345Z] INFO:Server up on port: 8000
+[2025-07-25T13:06:10.868Z] INFO:Server up on port: 8000
+[2025-07-25T13:06:12.516Z] INFO:Server up on port: 8000
+[2025-07-25T13:06:13.679Z] INFO:Server up on port: 8000
+[2025-07-25T13:06:18.574Z] INFO:Server up on port: 8000
+[2025-07-25T13:06:23.826Z] INFO:Server up on port: 8000
+[2025-07-25T13:06:25.370Z] INFO:Server up on port: 8000
+[2025-07-25T13:06:26.492Z] INFO:Server up on port: 8000
+[2025-07-25T13:06:29.062Z] INFO:Server up on port: 8000
+[2025-07-25T13:06:30.919Z] INFO:Server up on port: 8000
+[2025-07-25T13:06:35.920Z] INFO:Server up on port: 8000
+[2025-07-25T13:06:39.666Z] INFO:Server up on port: 8000
+[2025-07-25T13:06:42.953Z] INFO:Server up on port: 8000
+[2025-07-25T13:06:50.235Z] INFO:Server up on port: 8000
+[2025-07-25T13:06:52.135Z] INFO:Server up on port: 8000
+[2025-07-25T13:07:01.680Z] INFO:Server up on port: 8000
+[2025-07-25T13:07:03.913Z] INFO:Server up on port: 8000
+[2025-07-25T13:07:06.390Z] INFO:Server up on port: 8000
+[2025-07-25T13:07:08.475Z] INFO:Server up on port: 8000
+[2025-07-25T13:07:16.974Z] ERROR:Failed to cancel order [object Object]: Reason and actorId are required to cancel order
+[2025-07-25T13:07:16.976Z] ERROR:OrderController - create: Could not Cancel order
+[2025-07-25T13:07:16.978Z] ERROR:[500 Could not Cancel order - POST /order - ::ffff:127.0.0.1]
+[2025-07-25T13:08:08.087Z] ERROR:[404 Not Found - /order/cancel - PATCH /order/cancel - ::ffff:127.0.0.1]
+[2025-07-25T13:09:06.430Z] INFO:Server up on port: 8000
+[2025-07-25T13:09:21.844Z] INFO:Server up on port: 8000
+[2025-07-25T13:09:22.804Z] INFO:Server up on port: 8000
+[2025-07-25T13:10:02.452Z] INFO:Server up on port: 8000
+[2025-07-25T13:10:06.076Z] INFO:Server up on port: 8000
+[2025-07-25T13:10:15.360Z] INFO:Server up on port: 8000
+[2025-07-25T13:10:19.086Z] INFO:Server up on port: 8000
+[2025-07-25T13:10:23.124Z] INFO:Server up on port: 8000
+[2025-07-25T13:10:24.178Z] INFO:Server up on port: 8000
+[2025-07-25T13:10:38.159Z] INFO:Server up on port: 8000
+[2025-07-25T13:10:46.721Z] INFO:Server up on port: 8000
+[2025-07-25T13:10:51.140Z] INFO:Server up on port: 8000
+[2025-07-25T13:13:07.201Z] INFO:Server up on port: 8000
+[2025-07-25T13:13:36.685Z] ERROR:[404 Not Found - /1234-uuid-5678/cancel - PATCH /1234-uuid-5678/cancel - ::ffff:127.0.0.1]
+[2025-07-25T13:14:48.997Z] ERROR:Failed to cancel order [object Object]: Reason and actorId are required to cancel order
+[2025-07-25T13:14:48.998Z] ERROR:OrderController - create: Could not Cancel order
+[2025-07-25T13:14:48.999Z] ERROR:[500 Could not Cancel order - POST /order - ::ffff:127.0.0.1]
+[2025-07-25T13:15:01.290Z] ERROR:Failed to cancel order [object Object]: Reason and actorId are required to cancel order
+[2025-07-25T13:15:01.291Z] ERROR:OrderController - create: Could not Cancel order
+[2025-07-25T13:15:01.292Z] ERROR:[500 Could not Cancel order - POST /order - ::ffff:127.0.0.1]
+[2025-07-25T13:17:55.678Z] INFO:Server up on port: 8000
+[2025-07-25T13:17:58.719Z] INFO:Server up on port: 8000
+[2025-07-25T13:18:00.563Z] INFO:Server up on port: 8000
+[2025-07-25T13:22:18.382Z] INFO:Server up on port: 8000
+[2025-07-25T13:22:55.242Z] INFO:Server up on port: 8000
+[2025-07-25T13:23:01.661Z] INFO:Server up on port: 8000
+[2025-07-25T13:23:04.605Z] INFO:Server up on port: 8000
+[2025-07-25T13:23:07.725Z] INFO:Server up on port: 8000
+[2025-07-25T13:25:46.180Z] INFO:Server up on port: 8000
+[2025-07-25T13:25:51.217Z] INFO:Server up on port: 8000
+[2025-07-25T13:26:04.755Z] INFO:Server up on port: 8000
+[2025-07-25T13:26:25.951Z] INFO:Canceling order 1234-uuid-5678 by abcd-user-id
+[2025-07-25T13:26:26.205Z] ERROR:Failed to cancel order 1234-uuid-5678: 
+Invalid `prisma.order.update()` invocation:
+
+
+An operation failed because it depends on one or more records that were required but not found. No 'Order' record (needed to create inlined relation for 'Cancellation' record(s)) was found for a nested create on one-to-one relation 'CancellationToOrder'.
+[2025-07-25T13:26:26.206Z] ERROR:OrderController - cancel: Could not Cancel order
+[2025-07-25T13:26:26.208Z] ERROR:[500 Could not Cancel order - PATCH /order/1234-uuid-5678/cancel - ::ffff:127.0.0.1]
+[2025-07-25T13:27:22.869Z] ERROR:Failed to cancel order [object Object]: Reason and actorId are required to cancel order
+[2025-07-25T13:27:22.872Z] ERROR:OrderController - create: Could not Cancel order
+[2025-07-25T13:27:22.873Z] ERROR:[500 Could not Cancel order - POST /order - ::ffff:127.0.0.1]
+[2025-07-25T13:29:10.754Z] INFO:Server up on port: 8000
+[2025-07-25T13:29:30.864Z] INFO:Server up on port: 8000
+[2025-07-25T13:29:35.329Z] INFO:Server up on port: 8000
+[2025-07-25T13:29:46.851Z] INFO:Creating order for user user-uuid-123 with 2 items
+[2025-07-25T13:29:47.005Z] ERROR:Failed to create order: 
+Invalid `prisma.order.create()` invocation:
+
+{
+  data: {
+    userId: "user-uuid-123",
+    totalAmount: 100,
+    items: {
+      create: [
+        {
+          productId: "product-uuid-1",
+          quantity: 2
+        },
+        {
+          productId: "product-uuid-2",
+          quantity: 1
+        }
+      ]
+    },
+    shipping: {
+      create: {
+        address: "123 Main St, Nairobi"
+      }
+    },
+    discount: undefined,
+    tax: undefined,
+    paymentInfo: {
+      create: {
+        method: "mpesa",
+        transactionId: "txn_123456789"
+      }
+    },
+    auditLogs: {
+      create: {
+        action: "ORDER_CREATED",
+        actorId: "user-uuid-123"
+      }
+    }
+  },
+  include: {
+    items: true,
+    shipping: true,
+    discount: true,
+    tax: true,
+    paymentInfo: true,
+    auditLogs: true
+  }
+}
+
+Argument `price` is missing.
+[2025-07-25T13:29:47.006Z] ERROR:OrderController - create: Failed to create order
+[2025-07-25T13:29:47.008Z] ERROR:[500 Failed to create order - POST /order - ::ffff:127.0.0.1]
+[2025-07-25T13:31:53.981Z] INFO:Creating order for user user-uuid-123 with 2 items
+[2025-07-25T13:31:53.991Z] ERROR:Failed to create order: 
+Invalid `prisma.order.create()` invocation:
+
+{
+  data: {
+    userId: "user-uuid-123",
+    totalAmount: 100,
+    items: {
+      create: [
+        {
+          productId: "product-uuid-1",
+          quantity: 2,
+          price: 30
+        },
+        {
+          productId: "product-uuid-2",
+          quantity: 1,
+          price: 40
+        }
+      ]
+    },
+    shipping: {
+      create: {
+        address: "123 Main St, Nairobi",
++       fullName: String
+      }
+    },
+    discount: undefined,
+    tax: undefined,
+    paymentInfo: {
+      create: {
+        method: "mpesa",
+        transactionId: "txn_123456789"
+      }
+    },
+    auditLogs: {
+      create: {
+        action: "ORDER_CREATED",
+        actorId: "user-uuid-123"
+      }
+    }
+  },
+  include: {
+    items: true,
+    shipping: true,
+    discount: true,
+    tax: true,
+    paymentInfo: true,
+    auditLogs: true
+  }
+}
+
+Argument `fullName` is missing.
+[2025-07-25T13:31:53.992Z] ERROR:OrderController - create: Failed to create order
+[2025-07-25T13:31:53.993Z] ERROR:[500 Failed to create order - POST /order - ::ffff:127.0.0.1]
+[2025-07-25T13:33:31.629Z] INFO:Creating order for user user-uuid-123 with 2 items
+[2025-07-25T13:33:31.635Z] ERROR:Failed to create order: 
+Invalid `prisma.order.create()` invocation:
+
+{
+  data: {
+    userId: "user-uuid-123",
+    totalAmount: 100,
+    items: {
+      create: [
+        {
+          productId: "product-uuid-1",
+          quantity: 2,
+          price: 30
+        },
+        {
+          productId: "product-uuid-2",
+          quantity: 1,
+          price: 40
+        }
+      ]
+    },
+    shipping: {
+      create: {
+        fullName: "John Doe",
+        address1: "123 Main St",
+        city: "Nairobi",
+        state: "Nairobi County",
+        postalCode: "00100",
+        country: "Kenya",
+        phone: "+254712345678"
+      }
+    },
+    discount: undefined,
+    tax: undefined,
+    paymentInfo: {
+      create: {
+        provider: "mpesa",
+        transactionId: "txn_123456789",
++       paidAt: DateTime
+      }
+    },
+    auditLogs: {
+      create: {
+        action: "ORDER_CREATED",
+        actorId: "user-uuid-123"
+      }
+    }
+  },
+  include: {
+    items: true,
+    shipping: true,
+    discount: true,
+    tax: true,
+    paymentInfo: true,
+    auditLogs: true
+  }
+}
+
+Argument `paidAt` is missing.
+[2025-07-25T13:33:31.636Z] ERROR:OrderController - create: Failed to create order
+[2025-07-25T13:33:31.636Z] ERROR:[500 Failed to create order - POST /order - ::ffff:127.0.0.1]
+[2025-07-25T13:39:09.744Z] INFO:Server up on port: 8000
+[2025-07-25T13:39:11.088Z] INFO:Server up on port: 8000
+[2025-07-25T13:47:14.177Z] INFO:Server up on port: 8000
+[2025-07-25T14:21:11.961Z] INFO:Server up on port: 8000
+[2025-07-25T14:21:12.908Z] INFO:Server up on port: 8000
+[2025-07-25T14:22:00.455Z] INFO:Server up on port: 8000
+[2025-07-25T14:22:17.596Z] INFO:Server up on port: 8000
+[2025-07-25T14:22:19.376Z] INFO:Server up on port: 8000
+[2025-07-25T14:22:50.875Z] INFO:Server up on port: 8000
+[2025-07-25T14:22:54.440Z] INFO:Server up on port: 8000
+[2025-07-25T14:22:55.432Z] INFO:Server up on port: 8000
+[2025-07-25T14:23:10.657Z] INFO:Server up on port: 8000
+[2025-07-25T14:23:13.174Z] INFO:Server up on port: 8000
+[2025-07-25T14:23:26.882Z] INFO:Server up on port: 8000
+[2025-07-25T14:23:28.946Z] INFO:Server up on port: 8000
+[2025-07-25T14:23:32.104Z] INFO:Server up on port: 8000
+[2025-07-25T14:23:41.182Z] INFO:Server up on port: 8000
+[2025-07-25T14:25:22.066Z] INFO:Server up on port: 8000
+[2025-07-25T14:25:43.009Z] INFO:Server up on port: 8000
+[2025-07-25T14:25:49.264Z] INFO:Server up on port: 8000
+[2025-07-25T14:31:30.893Z] INFO:Server up on port: 8000
+[2025-07-25T14:31:32.511Z] INFO:Server up on port: 8000
+[2025-07-25T14:32:05.037Z] INFO:Server up on port: 8000
+[2025-07-25T14:32:06.891Z] INFO:Server up on port: 8000
+[2025-07-25T14:32:09.010Z] INFO:Server up on port: 8000
+[2025-07-25T14:34:34.081Z] INFO:Server up on port: 8000
+[2025-07-25T14:34:35.468Z] INFO:Server up on port: 8000
+[2025-07-25T14:34:53.103Z] INFO:Server up on port: 8000
+[2025-07-25T14:34:54.614Z] INFO:Server up on port: 8000
+[2025-07-25T14:35:47.591Z] INFO:Server up on port: 8000
+[2025-07-25T14:36:10.887Z] INFO:Server up on port: 8000
+[2025-07-25T14:37:20.896Z] INFO:Fetching all orders
+[2025-07-25T14:37:21.150Z] INFO:Retrieved 0 orders
+[2025-07-25T14:41:03.702Z] INFO:Creating order for user 1b2f8e22-3c65-4e1e-8b64-2c7e2a4e3f3c with 2 items
+[2025-07-25T14:41:03.819Z] INFO:Order 60e6f7f7-7810-4fec-b18e-46a6bfab7048 created successfully for user 1b2f8e22-3c65-4e1e-8b64-2c7e2a4e3f3c
+[2025-07-25T14:42:15.607Z] INFO:Fetching all orders
+[2025-07-25T14:42:15.625Z] INFO:Retrieved 1 orders
+[2025-07-25T14:44:00.331Z] INFO:Creating order for user f75a9c14-8b65-4fdc-a2d0-2f3f4e2a9a8c with 3 items
+[2025-07-25T14:44:00.418Z] INFO:Order b40fcc99-1b21-4ea4-bbbd-b6e341292da1 created successfully for user f75a9c14-8b65-4fdc-a2d0-2f3f4e2a9a8c
+[2025-07-25T14:44:17.213Z] INFO:Fetching all orders
+[2025-07-25T14:44:17.240Z] INFO:Retrieved 2 orders
